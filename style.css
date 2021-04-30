@@ -1,0 +1,82 @@
+* /*É um caractere curinga, isso significa que selecionará todos os elementos dessa parte do DOM*/
+{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    display: flex;
+     /*O layout flexível permite que os elementos responsivos dentro de um contêiner sejam organizados automaticamente, dependendo do tamanho da tela*/
+    flex-direction: column;
+    /*A direção em que as linhas de texto são empilhadas*/
+    overflow: hidden;
+}
+section .row{
+    position: relative;
+    top: -65%;
+    /*Defina a borda superior do elemento*/
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    white-space: nowrap;
+    /*Isto fará com que o texto fique na mesma linha*/
+    font-size: 50px;
+    transform: rotate(-30deg);
+    /*rotate CSS rotaciona o texto*/
+}
+i{
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    /*tempo da transição da animação*/
+    padding: 0 5px;
+    user-select: none;
+    /*user-select controla se o usuário pode selecionar texto*/
+    cursor: default;
+    /*indica o cursor que irá aparecer*/
+}
+i:hover{
+    transition: 0s;
+    color: #0f0;
+    text-shadow: 0 0 120px #0f0;
+}
+section .row div{
+    animation: animate1 80s linear infinite;
+    /*animation, aplica uma animação entre estilos (https://www.w3schools.com/cssref/css3_pr_animation.asp)
+    80s: A animation-duration propriedade define quanto tempo uma animação deve levar para completar um ciclo
+    infinite: A animation-iteration-count propriedade especifica o número de vezes que uma animação deve ser reproduzida.
+    animate1: A animation-name propriedade especifica um nome para a animação @keyframes (nome dado) 
+    linear: O animation-timing-function especifica a curva de velocidade de uma animação.
+    */
+    animation-delay: -80s;
+    /*especifica um atraso para o início de uma animação.*/
+}
+section .row div:nth-child(2){
+    /*:nth-child(): seleciona elementos com base em suas posições em um grupo de elementos irmãos.[(ttps://developer.mozilla.org/pt-BR/docs/Web/CSS/:nth-child)*/
+    animation: animate2 80s linear infinite;
+    animation-delay: -40s;
+}
+@keyframes animate1
+{
+    0%{
+        transform: translateX(100%);
+        /*reposiciona um elemento horizontalmente no plano 2D*/
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes animate2
+{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
+
+/*@Keyframes: https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes*/
