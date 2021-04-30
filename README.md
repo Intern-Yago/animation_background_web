@@ -2,4 +2,4 @@
 
 Site usado para os emojis:
 
-	https://fontawesome.com/v4.7.0/icons/
+https://fontawesome.com/v4.7.0/icons/
